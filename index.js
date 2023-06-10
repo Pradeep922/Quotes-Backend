@@ -20,13 +20,16 @@ app.use(cors({
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 }));
 
+app.get('/test', (req, res) => {
+  res.send('working')
+})
 app.use('/', quote_router);
 app.use('/users', userrouter);
 
 
 
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`App is running on PORT ${PORT}.`)
