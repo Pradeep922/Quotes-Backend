@@ -12,7 +12,6 @@ app.use(express.urlencoded({ extended: false }))
 
 
 //Connecting DB
-console.log("Check", process.env.MONGO_URL)
 db();
 
 app.use(cors({
@@ -32,5 +31,5 @@ app.use('/users', userrouter);
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-    console.log(`App is running on PORT ${PORT}.`)
+  console.log(`App is running on PORT ${PORT}.`)
 });
